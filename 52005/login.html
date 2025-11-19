@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | Full Screen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Prompt', sans-serif; }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1526657782458-9fe031d5a05d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            
+            background-size: cover;     
+            background-position: center; 
+            background-repeat: no-repeat;
+            height: 100vh;               
+            display: flex;
+            justify-content: center;     
+            align-items: center;         
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .login-card {
+            position: relative;
+            z-index: 2; 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(10px);           
+            padding: 50px 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { color: #000; }
+
+        h2 { margin-bottom: 10px; color: #333; font-size: 28px; }
+        p.desc { color: #666; margin-bottom: 30px; font-size: 14px; }
+
+        .input-group { text-align: left; margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 14px; color: #444; margin-bottom: 5px; font-weight: 500; }
+        .input-group input {
+            width: 100%; padding: 14px;
+            border: none;
+            background: #f0f2f5;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .input-group input:focus {
+            background: #fff;
+            outline: 2px solid #2563eb;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            background: #1d4ed8;
+            transform: scale(1.02);
+        }
+        
+        .footer-text { margin-top: 20px; font-size: 13px; color: #777; }
+        .footer-text a { color: #2563eb; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <a href="index.html" class="back-link">&larr; หน้าหลัก</a>
+
+        <h2>Welcome</h2>
+        <p class="desc">เข้าสู่ระบบเพื่อเริ่มความสนุก!</p>
+
+        <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+            <div class="input-group">
+                <label>อีเมล / ชื่อผู้ใช้</label>
+                <input type="text" required placeholder="กรอกอีเมลของคุณ">
+            </div>
+
+            <div class="input-group">
+                <label>รหัสผ่าน</label>
+                <input type="password" required placeholder="กรอกรหัสผ่าน">
+            </div>
+
+            <button type="submit" class="btn-login">เข้าสู่ระบบ</button>
+        </form>
+
+        <p class="footer-text">
+            ยังไม่มีบัญชี? <a href="#">สมัครสมาชิกเลย</a>
+        </p>
+    </div>
+
+</body>
+</html>
